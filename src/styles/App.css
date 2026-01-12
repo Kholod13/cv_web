@@ -1,3 +1,395 @@
+/* fonts */
+@font-face {
+  font-family: 'FiraCode';
+  src: url('./assets/fonts/FiraCode-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+    font-family: 'Notable';
+    src: url('./assets/fonts/Notable-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Sora Regular";
+    src: url('./assets/fonts/Sora-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Sora ExtraBold";
+    src: url('./assets/fonts/Sora-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Sora Light";
+    src: url('./assets/fonts/Sora-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+/* Main */
 .wrapper{
-  
+    background-color: #0F1A2A;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 115px 60px;
+}
+.title{
+    font-family: 'Sora ExtraBold', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #3A86FF;
+}
+.description{
+    font-size: 20px;
+    color: #DCDADA;
+    font-family: "Sora Regular", sans-serif;
+    font-weight: 400;
+}
+.title_scheme{
+    font-family: "Sora ExtraBold", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #3A86FF;
+    margin: 20px 0px;
+}
+.title_page{}
+.block {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.is-scrolled .logo{
+    position: fixed;/* Центрирование */
+    margin: 0;
+    z-index: 100;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); /* Плавная анимация */
+    pointer-events: none; /* Чтобы не мешал кликать под ним, пока он большой */
+}
+.is-scrolled .logo p{
+        font-size: 21px;
+}
+.logo {
+    position: fixed; /* Обязательно fixed с самого начала */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    /* Начальная позиция (совпадает с padding контейнера или где он должен быть) */
+    top: 115px; 
+    left: 100px;
+    
+    /* Убираем влияние трансформаций, если они не нужны */
+    transform: translate(0, 0);
+    
+    /* Плавность для всех свойств: позиция, размер шрифта, отступы */
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+}
+.logo .title {
+    font-size: 36px; /* Большой как в .title */
+    margin: 0;
+    transition: all 0.8s ease;
+    text-wrap: nowrap;
+}
+.logo .palm_icon {
+    width: 40px;
+    height: auto;
+    transition: all 0.8s ease;
+}
+/* 3. СОСТОЯНИЕ ПРИ СКРОЛЛЕ (Логотип улетает в угол) */
+.is-scrolled .logo {
+    top: 20px;    /* Прижимаем к верху */
+    left: calc(100% - 40px); 
+    /* Сдвигаем сам элемент влево на его собственную ширину, 
+       чтобы он не улетел за край экрана */
+    transform: translateX(-100%);     /* Уменьшаем расстояние между текстом и пальмой */
+}
+
+/* Уменьшаем текст внутри логотипа */
+.is-scrolled .logo .title {
+    font-size: 20px; 
+    color: #3A86FF; /* Можно сменить цвет при скролле */
+}
+
+/* Уменьшаем пальму */
+.is-scrolled .logo .palm_icon {
+    width: 24px;
+}
+/* Onboarding */
+.block_onboarding{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 115px 40px 115px 40px ;
+    background: url('../assets/snowflake1.svg') no-repeat 100% 70% ;
+}
+
+.undertitle{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.undertitle .palm_icon{}
+
+.main_title{
+    font-family: 'Arial', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: #DCDADA;
+    line-height: 0.9;
+    margin-bottom: 20px;
+}
+
+/* КОНТЕЙНЕР ДЛЯ ТАБОВ */
+
+.tabs_scroll_container {
+    /* Высота = количество табов * 100vh */
+    height: 500vh; 
+    position: relative;
+    z-index: 10; /* Слой ВЫШЕ всех */
+    background-color: #0F1A2A; /* ОБЯЗАТЕЛЬНО: плотный фон */
+}
+/* Липкое окно, которое мы видим, пока скроллим 500vh */
+.sticky_tabs_wrapper {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    height: 100vh;
+    box-shadow: #0F1A2A 0px 0px 20px 50px ;
+    display: flex;
+    justify-content: space-between;
+    background-color: #0F1A2A; /* Чтобы не просвечивал фон */
+    padding: 60px;
+    box-sizing: border-box;
+}
+.tabs_nav {
+    margin-bottom: 50px;
+    display: flex;
+}
+.tabs_nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    list-style: none;
+    line-height: 0.9;
+    padding: 0;
+}
+.tab_item {
+    opacity: 0.3;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.tab_item.active {
+    opacity: 1;
+    color: #3A86FF;
+    transform: scale(1.1);
+}
+.tabs_content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    /* Анимация появления контента */
+    animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu */
+
+.block_tabs{
+    position: sticky;
+    z-index: 2;
+}
+.tabs_nav{}
+
+.tab_item{}
+
+.tabs_content{}
+
+/* Resume block */
+/* Resume main blocks */
+.block_resume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 2;
+}
+.resume_reveal_wrapper {
+    position: relative;
+    height: 100vh; /* Резервируем место под высоту резюме */
+    z-index: 1;    /* Слой НИЖЕ табов */
+    background-color: #0F1A2A; /* Тот же фон, что у всего сайта */
+}
+
+/* 3. Само резюме (статичный блок под шторой) */
+.block_resume {
+    position: sticky; /* Приклеиваем к низу */
+    bottom: 0;        /* К нижней границе экрана */
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 60px;
+}
+.resume_mac{
+    margin-top: 40px;
+    border: 1px solid #3A86FF;
+    border-radius: 15px;
+    width: 620px;
+    height: 580px;
+    overflow: hidden;
+}
+/* mac header */
+.mac_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #3A86FF;
+}
+/* mac buttons */
+.mac_buttons{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.mac_buttons .mac_button{
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+.red{ background-color: red; }
+.yellow{ background-color: yellow; }
+.green{ background-color: green; }
+/* mac url bar */
+.mac_url_bar{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 8px;
+    background-color: #38414D;
+    padding: 5px 10px;
+}
+
+.lock_icon, .reload_icon{
+    width: 16px;
+}
+.url_text{
+    color: #DCDADA;
+    font-size: 12px;
+    font-family: "Sora Regular", sans-serif;
+    font-weight: 400;
+}
+/* mac download */
+.mac_download{}
+
+.download_button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.upload_icon{}
+
+/* mac body */
+.mac_body{
+    padding: 10px;
+    padding-top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* mac placeholders */
+.mac_placeholders{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+.placeholders_long_container{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+}
+.placeholders_short_container{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+}
+.placeholder_long_item{
+    width: 90%;
+    background-color: blue;
+}
+.placeholder_short_item{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.placeholder_item{
+    height: 13px;
+    border-radius: 5px;
+    background-color: purple;
+}
+
+.long_item_line1, .short_item_line1{
+    width: 100%;
+}
+.long_item_line2, .short_item_line2{
+    width: 80%;
+}
+.long_item_line3, .short_item_line3{
+    width: 60%;
+}
+
+/* footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0F1A2A;
+    z-index: 1;
+    padding-top: 115px;
+}
+.footer_links{
+    margin: 40px 0px;
+}
+.footer_links ul{
+    display: flex;
+    gap: 40px;
+    padding: 0;
+}
+.footer_links li{
+    font-family: "Sora Light", sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    color: #3A86FF;
+    list-style: none;
+}
+
+.creators{
+    color: #DCDADA;
+    font-size: 13px;
+    font-family: "Sora Regular", sans-serif;
 }
