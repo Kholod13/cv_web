@@ -4,18 +4,21 @@ import palm from "../../assets/palm.png"
 import lock from "../../assets/icons/lock.svg"
 import reload from "../../assets/icons/reload.svg"
 import upload from "../../assets/icons/upload.svg"
+import { useNavigate } from 'react-router-dom';
 
 const TABS_DATA = [
-  { id: 1, title: "About Me", content: "This is the About Me section." },
-  { id: 2, title: "Goals", content: "This is the Goals section." },
-  { id: 3, title: "Projects", content: "This is the Projects section." },
-  { id: 4, title: "Experience", content: "This is the Experience section." },
-  { id: 5, title: "Contacts", content: "This is the Contacts section." },
+  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", image: '../../../public/tabs/about_me.jpg' },
+  { id: 'Goals', title: "Goals", content: "Click here to see my professional goals and aspirations.", image: '../../../public/tabs/goals.png' },
+  { id: 'Projects', title: "Projects", content: "Check out a detailed showcase of my works and the technologies I used to build them.", image: '../../../public/tabs/projects.png' },
+  { id: 'Experience', title: "Experience", content: "Discover my career journey and the skills I've gained along the way.", image: '../../../public/tabs/experience.png' },
+  { id: 'Contacts', title: "Contacts", content: "Let’s get in touch! You can find all my social links and contact info here.", image: '../../../public/tabs/contacts.png' },
 ]
 
 export default function Home() {
   const [scrolledLogo, setScrolledLogo] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(0);
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +40,17 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
     }
   }, []);
+
+  const scrollToTab = (index) => {
+    const vh = window.innerHeight;
+    // Рассчитываем позицию: 100vh (Onboarding) + (индекс * 100vh)
+    const targetScroll = vh + (index * vh); 
+
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth' // Плавная прокрутка
+    });
+  };
 
   return (
     <div className={`wrapper ${scrolledLogo ? 'is-scrolled' : ''}`}>
@@ -61,6 +75,7 @@ export default function Home() {
               <ul>
                 {TABS_DATA.map((tab, index) => (
                   <li 
+                    onClick={() => scrollToTab(index)}
                     key={tab.id} 
                     className={`tab_item title ${index === activeTab ? 'active' : ''}`}
                   >
@@ -71,8 +86,10 @@ export default function Home() {
             </nav>
             <div className="tabs_content">
               {/* Здесь отображается контент активного таба */}
-              <h2 className="title">{TABS_DATA[activeTab].title}</h2>
-              <p className="description">{TABS_DATA[activeTab].content}</p>
+              <div onClick={() => navigate(`/${TABS_DATA[activeTab].id}`)} className='tab_image'>
+                <img src={TABS_DATA[activeTab].image} alt="tab image" className="activeTab_image"/>
+              </div>
+              <p style={{width: '70%', textAlign: 'right'}} className="description">{TABS_DATA[activeTab].content}</p>
             </div>
           </div>
         </section>
@@ -92,9 +109,9 @@ export default function Home() {
                   <img src={reload} alt="reload icon" className="reload_icon"/>
                 </div>
                 <div className="mac_download">
-                  <button className="download_button">
-                    <img src={upload} alt="upload icon" className="upload_icon"/>
-                  </button>
+                  <a href="/KholodVladyslav_CV.pdf" download="Vladyslav_Kholod_CV.pdf" className="download_button">
+                    <img src={upload} alt="download icon" className="upload_icon"/>
+                  </a>
                 </div>
               </div>
               <div className="mac_body">
@@ -161,13 +178,13 @@ export default function Home() {
           </div>
           <div className="footer_links">
             <ul>
-              <li>LinkedIn</li>
-              <li>Email</li>
-              <li>GitHub</li>
+              <li><a href="https://www.linkedin.com/in/vladyslav-kholod-86647120a/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="mailto:vlad13holod@gmail.com">Email</a></li>
+              <li><a href="https://github.com/Kholod13" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </div>
           <p className="creators">
-            © 2026 Vladyslav K. All rights reserved.
+            © 2026 Developed by Vladyslav K. | Designed by Alyna L. All rights reserved.
           </p>
         </footer>
       </div>
