@@ -43,18 +43,16 @@ export default function Goals() {
                                 dragMomentum={false}
                                 onDrag={updateXarrow}
                                 onDragEnd={updateXarrow}
-                                animate={{ y: [0, -10, 0] }} // Анимация плавания
+                                animate={{ y: [0, -10, 0] }} 
                                     transition={{
                                         duration: 3,
                                         repeat: Infinity,
                                         ease: "easeInOut",
-                                        delay: index * 0.4, // Чтобы плавали несинхронно
+                                        delay: index * 0.4,
                                     }}
                                 className={`goalItem ${goal.isDone ? "done" : ""}`}
                                 style={{
-                                    /* 4 колонки: 0, 1, 2, 3 */
                                     left: `${(index % 4) * 22 + 8}%`, 
-                                    /* 4 ряда: 0, 1, 2, 3 */
                                     top: `${Math.floor(index / 4) * 220 + 50}px`, 
                                     position: "absolute",
                                     zIndex: 1
@@ -62,7 +60,6 @@ export default function Goals() {
                                 whileHover={{ scale: 1.05, zIndex: 10 }}
                                 whileDrag={{ zIndex: 100 }}
                             >
-                                {/* ВНУТРЕННИЙ БЛОК: и animate, и transition теперь здесь */}
                                 <motion.div
                                     
                                 >
@@ -73,7 +70,6 @@ export default function Goals() {
                             </motion.div>
                         ))}
 
-                        {/* Стрелки */}
                         {GOALS_LIST.map((goal, index) => {
                             if (index < GOALS_LIST.length - 1) {
                                 return (

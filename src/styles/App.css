@@ -602,18 +602,14 @@ footer{
 }
 
 /* projects  page */
-
-/* Контейнер для страницы проектов */
 .project-page-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* Указываем фон здесь, это надежнее */
     background: url('../../assets/snowflake3.svg') no-repeat right top;
-    background-attachment: fixed; /* Чтобы фон не уезжал при скролле */
+    background-attachment: fixed;
 }
 
-/* Сетка карточек */
 .projects_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -623,7 +619,6 @@ footer{
     flex: 1;
 }
 
-/* Карточка проекта */
 .project_card {
     background: rgba(15, 26, 42, 0.6);
     border: 1px solid rgba(58, 134, 255, 0.3);
@@ -657,7 +652,6 @@ footer{
     flex-grow: 1;
 }
 
-/* Теги технологий */
 .project_tech_list {
     display: flex;
     flex-wrap: wrap;
@@ -674,8 +668,6 @@ footer{
     font-family: "Sora Light", sans-serif;
     border: 1px solid rgba(58, 134, 255, 0.3);
 }
-
-/* Ссылка */
 .project_link {
     display: inline-block;
     color: #fff;
@@ -691,4 +683,134 @@ footer{
 .project_link:hover {
     color: #fff;
     border-color: #fff;
+}
+
+/* experience page */
+
+.experience_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+}
+
+/* macBlock */
+
+.mac_tabs {
+    display: flex;
+    margin-left: 20px;
+}
+
+.mac_tab {
+    padding: 5px 20px;
+    background: rgba(58, 134, 255, 0.05);
+    border-right: 1px solid rgba(58, 134, 255, 0.2);
+    cursor: pointer;
+    font-family: 'FiraCode', monospace;
+    font-size: 12px;
+    color: #DCDADA;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    border-radius: 10px 10px 0 0;
+}
+
+.mac_tab.active {
+    background: rgba(58, 134, 255, 0.15);
+    color: #3A86FF;
+    border-bottom: 2px solid #3A86FF;
+}
+.code_editor {
+    display: flex;
+    padding: 20px !important;
+    font-family: 'FiraCode', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: transparent; 
+}
+
+.line_numbers {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    padding-right: 20px;
+    color: #484f58;
+    user-select: none;
+    border-right: 1px solid #21262d;
+}
+
+.code_content {
+    padding-left: 20px;
+}
+
+.indent {
+    padding-left: 20px;
+}
+
+.keyword { color: #ff7b72; }
+.variable { color: #d2a8ff; }
+.key { color: #79c0ff; }
+.string { color: #a5d6ff; }
+.comment { color: #8b949e; font-style: italic; }
+
+.experienceMac {
+    width: 100%;
+    max-width: 700px;
+    height: auto !important; 
+    min-height: 300px;
+}
+
+/* marquee */
+
+.marquee {
+    width: 100%;
+    overflow: hidden; /* Скрываем лишнее */
+    padding: 50px 0;
+    position: relative;
+    /* Эффект размытия по краям */
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 20%,
+        rgb(0, 0, 0) 80%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+.marquee_track {
+    display: flex;
+    width: max-content; /* Позволяет контейнеру быть шире экрана */
+    flex-wrap: nowrap;
+    animation: scroll_infinite 15s linear infinite; /* 30 секунд — скорость */
+}
+
+.marquee_item {
+    padding: 0 40px; /* Расстояние между иконками */
+    flex-shrink: 0;
+}
+
+.marquee_item img {
+    width: 60px;
+    height: 60px;
+    filter: grayscale(1);
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+/* При наведении подсвечиваем иконку */
+.marquee_item img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* САМА АНИМАЦИЯ */
+@keyframes scroll_infinite {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        /* Двигаем ровно на половину общей длины ленты */
+        transform: translateX(-50%);
+    }
 }

@@ -43,7 +43,6 @@ const PROJECTS_LIST = [
 export default function Projects() {
     return (
         <div className="wrapper min-h-screen">
-            {/* 2. Добавляем фон через инлайн-стиль или CSS (лучше через CSS) */}
             <div className="container project-page-container">
                 <p className="pageTitle">Projects</p>
 
