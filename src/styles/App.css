@@ -764,10 +764,9 @@ footer{
 
 .marquee {
     width: 100%;
-    overflow: hidden; /* Скрываем лишнее */
+    overflow: hidden;
     padding: 50px 0;
     position: relative;
-    /* Эффект размытия по краям */
     mask-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0) 0%,
@@ -779,13 +778,13 @@ footer{
 
 .marquee_track {
     display: flex;
-    width: max-content; /* Позволяет контейнеру быть шире экрана */
+    width: max-content;
     flex-wrap: nowrap;
-    animation: scroll_infinite 15s linear infinite; /* 30 секунд — скорость */
+    animation: scroll_infinite 15s linear infinite;
 }
 
 .marquee_item {
-    padding: 0 40px; /* Расстояние между иконками */
+    padding: 0 40px;
     flex-shrink: 0;
 }
 
@@ -797,20 +796,116 @@ footer{
     transition: all 0.3s ease;
 }
 
-/* При наведении подсвечиваем иконку */
 .marquee_item img:hover {
     filter: grayscale(0);
     opacity: 1;
     transform: scale(1.2);
 }
 
-/* САМА АНИМАЦИЯ */
 @keyframes scroll_infinite {
     from {
         transform: translateX(0%);
     }
     to {
-        /* Двигаем ровно на половину общей длины ленты */
         transform: translateX(-50%);
+    }
+}
+
+/* Contacts */
+
+.contacts_page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts_intro {
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.contactsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    flex: 1;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+.contactCard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background: rgba(58, 134, 255, 0.03);
+    border: 1px solid rgba(58, 134, 255, 0.1);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contactCard:hover {
+    background: rgba(58, 134, 255, 0.08);
+    border-color: #3A86FF;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(58, 134, 255, 0.15);
+}
+
+.contactIcon_wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 26, 42, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(220, 218, 218, 0.1);
+}
+
+.contactIcon {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.contactCard:hover .contactIcon {
+    filter: none; 
+    opacity: 1;
+    transform: rotate(10deg);
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contactName {
+    font-family: "Sora ExtraBold", sans-serif;
+    font-size: 18px;
+    color: #3A86FF;
+}
+
+.contactLabel {
+    font-family: "Sora Light", sans-serif;
+    font-size: 14px;
+    color: #DCDADA;
+    opacity: 0.7;
+}
+
+.contactCard:hover .contactLabel {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .contactsGrid {
+        grid-template-columns: 1fr;
     }
 }

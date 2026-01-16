@@ -3,7 +3,6 @@ import "../../styles/App.css";
 import Creators from "../Creators";
 import MacBlock from "./ExperienceMacBlock";
 
-// Импортируем иконки (добавь свои пути)
 import figma from "../../assets/icons/figma.svg";
 import reactIcon from "../../assets/icons/react.svg"; // проверь названия
 import jsIcon from "../../assets/icons/javascript.svg";
@@ -30,16 +29,13 @@ export default function Experience() {
                     <MacBlock />
                 </div>
 
-                {/* БЕСКОНЕЧНАЯ КАРУСЕЛЬ */}
                 <div className="marquee">
                     <div className="marquee_track">
-                        {/* Первый набор иконок */}
                         {TECH_ICONS.map((icon, index) => (
                             <div className="marquee_item" key={`icon-1-${index}`}>
                                 <img src={icon} alt="tech" />
                             </div>
                         ))}
-                        {/* ВТОРОЙ ТАКОЙ ЖЕ НАБОР (копия) */}
                         {TECH_ICONS.map((icon, index) => (
                             <div className="marquee_item" key={`icon-2-${index}`}>
                                 <img src={icon} alt="tech" />
