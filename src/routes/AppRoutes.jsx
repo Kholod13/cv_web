@@ -9,6 +9,7 @@ import "../styles/App.css"
 
 export default function AppRoutes() {
   return ( 
+    
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />

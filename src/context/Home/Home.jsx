@@ -5,9 +5,10 @@ import lock from "../../assets/icons/lock.svg"
 import reload from "../../assets/icons/reload.svg"
 import upload from "../../assets/icons/upload.svg"
 import { useNavigate } from 'react-router-dom';
+import Creators from '../Creators';
 
 const TABS_DATA = [
-  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", image: '../../../public/tabs/about_me.jpg' },
+  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", image: '../../../public/tabs/about_me.png' },
   { id: 'Goals', title: "Goals", content: "Click here to see my professional goals and aspirations.", image: '../../../public/tabs/goals.png' },
   { id: 'Projects', title: "Projects", content: "Check out a detailed showcase of my works and the technologies I used to build them.", image: '../../../public/tabs/projects.png' },
   { id: 'Experience', title: "Experience", content: "Discover my career journey and the skills I've gained along the way.", image: '../../../public/tabs/experience.png' },
@@ -54,7 +55,7 @@ export default function Home() {
 
   return (
     <div className={`wrapper ${scrolledLogo ? 'is-scrolled' : ''}`}>
-      <div className="undertitle logo">
+      <div style={{cursor: 'text'}} className="undertitle logo">
             <p className="title">Hi, I'm Vladyslav Kholod</p>
             <img src={palm} alt="palm icon" className="palm_icon"/>
           </div>
@@ -183,9 +184,7 @@ export default function Home() {
               <li><a href="https://github.com/Kholod13" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             </ul>
           </div>
-          <p className="creators">
-            © 2026 Developed by Vladyslav K. | Designed by Alyna L. All rights reserved.
-          </p>
+          <Creators />
         </footer>
       </div>
     </div>
