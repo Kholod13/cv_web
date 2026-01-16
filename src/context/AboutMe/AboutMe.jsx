@@ -21,7 +21,7 @@ export default function AboutMe() {
 
     return (
         <div className={`wrapper`}>
-            <div className="container" style={{paddingTop: 0}}>
+            <div className="container">
                 <p className="pageTitle">About me</p>
                 <div className="aboutme_content">
                     <div className="aboutme_text">

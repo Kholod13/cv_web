@@ -48,7 +48,6 @@
     font-size: 48px;
     font-weight: 800;
     color: #fff;
-    margin-top: 60px;
 }
 .description{
     font-size: 20px;
@@ -519,16 +518,14 @@ footer{
 
 /* goals page */
 
-/* 1. Контейнер для летающих блоков */
 .goalsSpace {
     position: relative;
     width: 100%;
-    min-height: 1050px; /* Чтобы поместилось два ряда по 250px + отступы */
+    min-height: 1050px;
     margin-top: 40px;
     margin-bottom:280px;
 }
 
-/* 2. Базовый стиль карточки цели */
 .goalItem {
     position: absolute;
     width: 120px;
@@ -545,24 +542,21 @@ footer{
     text-align: center;
     
     user-select: none;
-    touch-action: none; /* Предотвращает конфликт скролла и драга */
+    touch-action: none;
     cursor: grab;
     z-index: 1;
 }
 
-/* Состояние при клике/перетаскивании */
 .goalItem:active {
     cursor: grabbing;
 }
 
-/* 3. Стили для ВЫПОЛНЕННОЙ цели */
 .goalItem.done {
     border-color: #4ade80;
     background: rgba(74, 222, 128, 0.05);
     box-shadow: 0 0 20px rgba(74, 222, 128, 0.2);
 }
 
-/* 4. Текстовые стили внутри карточки */
 .goalItem .itemTitle {
     font-family: "Sora ExtraBold", sans-serif;
     font-weight: 800;
@@ -585,7 +579,6 @@ footer{
     line-height: 1.4;
 }
 
-/* Статус "Done" */
 .statusText {
     font-family: "Sora Light", sans-serif;
     font-size: 8px;
@@ -596,7 +589,6 @@ footer{
     opacity: 0.8;
 }
 
-/* Фикс для прижатия футера (внешняя обертка) */
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -607,4 +599,96 @@ footer{
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+/* projects  page */
+
+/* Контейнер для страницы проектов */
+.project-page-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Указываем фон здесь, это надежнее */
+    background: url('../../assets/snowflake3.svg') no-repeat right top;
+    background-attachment: fixed; /* Чтобы фон не уезжал при скролле */
+}
+
+/* Сетка карточек */
+.projects_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    flex: 1;
+}
+
+/* Карточка проекта */
+.project_card {
+    background: rgba(15, 26, 42, 0.6);
+    border: 1px solid rgba(58, 134, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project_card:hover {
+    transform: translateY(-10px);
+    border-color: #3A86FF;
+    box-shadow: 0 15px 40px rgba(58, 134, 255, 0.2);
+}
+
+.project_card .itemTitle {
+    font-family: "Sora ExtraBold", sans-serif;
+    font-size: 26px;
+    color: #3A86FF;
+    margin-bottom: 15px;
+}
+
+.project_card .itemDescription {
+    color: #DCDADA;
+    font-family: 'Sora Regular';
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Теги технологий */
+.project_tech_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tech_tag {
+    background: rgba(58, 134, 255, 0.1);
+    color: #3A86FF;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: "Sora Light", sans-serif;
+    border: 1px solid rgba(58, 134, 255, 0.3);
+}
+
+/* Ссылка */
+.project_link {
+    display: inline-block;
+    color: #fff;
+    font-family: "Sora Regular", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #3A86FF;
+    width: fit-content;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.project_link:hover {
+    color: #fff;
+    border-color: #fff;
 }

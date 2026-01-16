@@ -30,7 +30,7 @@ export default function Goals() {
     return (
         <div className="wrapper" style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
             <div className="container" style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-                <p className="pageTitle" style={{ margin: 0 }}>Goals</p>
+                <p className="pageTitle">Goals</p>
                 
                 <Xwrapper>
                     <div className="goalsSpace" ref={constraintsRef} style={{ position: 'relative', minHeight: '650px', width: '100%' }}>
