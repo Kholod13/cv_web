@@ -7,6 +7,7 @@ import inst from "../../assets/socialMedia/instagram.svg";
 import linkedin from "../../assets/socialMedia/linkedin.svg";
 import mail from "../../assets/socialMedia/mail.svg";
 import tg from "../../assets/socialMedia/telegram.svg";
+import profile from "../../assets/socialMedia/profile.svg";
 
 const CONTACTS_DATA = [
     { id: 1, name: "GitHub", icon: git, link: "https://github.com/Kholod13", label: "@Kholod13" },
@@ -14,6 +15,7 @@ const CONTACTS_DATA = [
     { id: 3, name: "Telegram", icon: tg, link: "https://t.me/kah13x", label: "@kah13x" },
     { id: 4, name: "Email", icon: mail, link: "mailto:vlad13holod@gmail.com", label: "vlad13holod@gmail.com" },
     { id: 5, name: "Instagram", icon: inst, link: "https://instagram.com/xxolod_", label: "@xxolod_" },
+    { id: 6, name: "Phone number", icon: profile, link: "#", label: "+420721051891" },
 ];
 
 export default function Contacts() {
