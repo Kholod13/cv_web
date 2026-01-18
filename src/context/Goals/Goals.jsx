@@ -14,11 +14,11 @@ const GOALS_LIST = [
     { id: "goal-7", title: "REST API", description: "Fetching and handling server data", isDone: true },
     { id: "goal-8", title: "Redux / Toolkit", description: "Complex state management", isDone: true },
     { id: "goal-9", title: "TypeScript", description: "Type safety for scalable apps", isDone: true },
+    { id: "goal-9", title: "Vercel", description: "Host websites", isDone: true },
     { id: "goal-10", title: "React Native", description: "Mobile apps for iOS & Android", isDone: true },
     { id: "goal-11", title: "Next.js", description: "SSR, SSG and SEO optimization", isDone: false },
     { id: "goal-12", title: "Node.js", description: "Building scalable server-side apps", isDone: false },
     { id: "goal-13", title: "SQL & DBs", description: "Relational data and PostgreSQL", isDone: false },
-    { id: "goal-14", title: "GraphQL", description: "Flexible data fetching with Apollo", isDone: false },
     { id: "goal-15", title: "Unit Testing", description: "Ensuring quality with Jest/Vitest", isDone: false },
     { id: "goal-16", title: "Web Performance", description: "Core Web Vitals and Optimization", isDone: false },
 ];

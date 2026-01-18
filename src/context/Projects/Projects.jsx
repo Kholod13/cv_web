@@ -28,7 +28,7 @@ const PROJECTS_LIST = [
         id: 4,
         title: "Portfolio Web",
         description: "My personal portfolio website built with React and Framer Motion.",
-        tech: ["React", "CSS", "Vite"],
+        tech: ["React", "CSS", "Vite", "Vercel"],
         link: "https://github.com/Kholod13/cv_web"
     },
     {

@@ -7,12 +7,18 @@ import upload from "../../assets/icons/upload.svg"
 import { useNavigate } from 'react-router-dom';
 import Creators from '../Creators';
 
+import AboutMe from '../../assets/tabs/about_me.png';
+import Contacts from '../../assets/tabs/contacts.png';
+import Experience from '../../assets/tabs/experience.png';
+import Goals from '../../assets/tabs/goals.png';
+import Projects from '../../assets/tabs/projects.png';
+
 const TABS_DATA = [
-  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", image: '../../../public/tabs/about_me.png' },
-  { id: 'Goals', title: "Goals", content: "Click here to see my professional goals and aspirations.", image: '../../../public/tabs/goals.png' },
-  { id: 'Projects', title: "Projects", content: "Check out a detailed showcase of my works and the technologies I used to build them.", image: '../../../public/tabs/projects.png' },
-  { id: 'Experience', title: "Experience", content: "Discover my career journey and the skills I've gained along the way.", image: '../../../public/tabs/experience.png' },
-  { id: 'Contacts', title: "Contacts", content: "Let’s get in touch! You can find all my social links and contact info here.", image: '../../../public/tabs/contacts.png' },
+  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", image: AboutMe },
+  { id: 'Goals', title: "Goals", content: "Click here to see my professional goals and aspirations.", image: Goals },
+  { id: 'Projects', title: "Projects", content: "Check out a detailed showcase of my works and the technologies I used to build them.", image: Projects },
+  { id: 'Experience', title: "Experience", content: "Discover my career journey and the skills I've gained along the way.", image: Experience },
+  { id: 'Contacts', title: "Contacts", content: "Let’s get in touch! You can find all my social links and contact info here.", image: Contacts },
 ]
 
 export default function Home() {
