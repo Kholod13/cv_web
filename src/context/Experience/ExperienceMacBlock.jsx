@@ -16,7 +16,7 @@ const EXPERIENCE_DATA = [
         id: 1,
         fileName: "qri-tech.js",
         variableName: "currentJob",
-        title: "Junior Frontend Developer",
+        title: "Frontend Developer / React Developer",
         company: "QRI Tech",
         from: "14/01/25",
         to: "Present",
