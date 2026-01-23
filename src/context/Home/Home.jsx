@@ -116,7 +116,7 @@ export default function Home() {
                   <img src={reload} alt="reload icon" className="reload_icon"/>
                 </div>
                 <div className="mac_download">
-                  <a href="/KholodVladyslav_CV.pdf" download="Vladyslav_Kholod_CV.pdf" className="download_button">
+                  <a href="/Vladyslav_Kholod_Frontend_CV.pdf" download="Vladyslav_Kholod_Frontend_CV.pdf" className="download_button">
                     <img src={upload} alt="download icon" className="upload_icon"/>
                   </a>
                 </div>
