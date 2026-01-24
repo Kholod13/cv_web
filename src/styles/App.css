@@ -26,7 +26,6 @@
 }
 /* Main */
 .wrapper{
-    background-color: #0F1A2A;
     display: flex;
     flex-direction: column;
 }
@@ -76,7 +75,13 @@
     pointer-events: none; /* Чтобы не мешал кликать под ним, пока он большой */
 }
 .is-scrolled .logo p{
-        font-size: 21px;
+    font-size: 21px;
+}
+.light_theme{
+    background-color: #a5d6ff !important;
+}
+.dark_theme{
+    background-color: #0F1A2A !important;
 }
 .logo {
     position: fixed; /* Обязательно fixed с самого начала */

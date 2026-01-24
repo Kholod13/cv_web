@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../context/Home/Home";
-import AboutMe from "../context/AboutMe/AboutMe";
-import Contacts from "../context/Contacts/Contacts";
-import Goals from "../context/Goals/Goals";
-import Experience from "../context/Experience/Experience";
-import Projects from "../context/Projects/Projects";
+import Home from "../components/Home/Home";
+import AboutMe from "../components/AboutMe/AboutMe";
+import Contacts from "../components/Contacts/Contacts";
+import Goals from "../components/Goals/Goals";
+import Experience from "../components/Experience/Experience";
+import Projects from "../components/Projects/Projects";
 import "../styles/App.css"
 
 export default function AppRoutes() {

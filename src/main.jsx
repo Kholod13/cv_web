@@ -3,15 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom';
-import ScrollToTop from './context/ScrollToTop.jsx';
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import ScrollToTop from './components/ScrollToTop.jsx';
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <SpeedInsights />
     <BrowserRouter>
-      <ScrollToTop />
-      <App />
+      <ThemeProvider>
+        <ScrollToTop />
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )

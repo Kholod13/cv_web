@@ -6,6 +6,8 @@ import reload from "../../assets/icons/reload.svg"
 import upload from "../../assets/icons/upload.svg"
 import { useNavigate } from 'react-router-dom';
 import Creators from '../Creators';
+import { useTheme } from '../../context/ThemeContext';
+import ThemeToggler from '../../context/ThemeToggler';
 
 import AboutMe from '../../assets/tabs/about_me.png';
 import Contacts from '../../assets/tabs/contacts.png';
@@ -59,14 +61,17 @@ export default function Home() {
     });
   };
 
+  const {theme} = useTheme();
+
   return (
-    <div className={`wrapper ${scrolledLogo ? 'is-scrolled' : ''}`}>
+    <div className={`wrapper ${scrolledLogo ? 'is-scrolled' : ''} ${theme === 'dark' ? 'dark_theme' : 'light_theme'}`}>
       <div style={{cursor: 'text'}} className="undertitle logo">
             <p className="title">Hi, I'm Vladyslav Kholod</p>
             <img src={palm} alt="palm icon" className="palm_icon"/>
           </div>
       <div className="container" style={{paddingTop: 0}}>
         <section className="block_onboarding block">
+          <ThemeToggler />
           <h1 className="main_title">
             FRONTEND<br />
             DEVELOPER
