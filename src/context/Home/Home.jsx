@@ -4,7 +4,6 @@ import palm from "../../assets/palm.png"
 import lock from "../../assets/icons/lock.svg"
 import reload from "../../assets/icons/reload.svg"
 import upload from "../../assets/icons/upload.svg"
-import { useNavigate } from 'react-router-dom';
 import Creators from '../Creators';
 
 import AboutMe from '../AboutMe/AboutMe.jsx';
@@ -25,7 +24,6 @@ export default function Home() {
   const [scrolledLogo, setScrolledLogo] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(0);
 
-  const navigate = useNavigate();
 
   React.useEffect(() => {
     const handleScroll = () => {

@@ -1,16 +1,64 @@
-# React + Vite
+# 🚀 Professional Frontend Portfolio — Vladyslav Kholod
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio website, designed to showcase my skills as a Frontend Developer. It’s not just a landing page, but a high-performance React application featuring complex animations, custom architectural solutions, and modern UI/UX principles.
 
-Currently, two official plugins are available:
+**🌐 Live Demo:** [portfolio-kappa-umber-52.vercel.app](https://portfolio-kappa-umber-52.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Key Technical Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Advanced Motion System:** Implemented using `Framer Motion` for smooth Reveal and Parallax effects.
+- **Dynamic Sticky Navigation:** A custom-built scroll-based tab system that switches content based on the user's viewport position (500vh container logic).
+- **macOS-Inspired UI:** A pixel-perfect interactive block representing a terminal/code editor for work experience.
+- **Performance Optimized:** 100/100 Lighthouse scores in mind, using optimized assets and modern CSS.
+- **Responsive Architecture:** Fully adaptive design using `Tailwind CSS`, ensuring a seamless experience from mobile devices to 4K monitors.
+- **Client-Side Routing:** Powered by `React Router DOM` for fast, zero-refresh transitions between sections.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔒 Security Audit & Quality Assurance
+
+This project has been professionally tested to ensure high standards of security and code quality:
+- **Penetration Test Result:** Successfully passed a professional security audit (OWASP WSTG standard).
+- **Vulnerabilities:** 0 critical or high vulnerabilities found.
+- **Focus:** Clean dependency management and secure deployment on Vercel.
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** React 19 (Vite)
+- **Styling:** Tailwind CSS (Custom theme)
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Routing:** React Router DOM
+- **Deployment:** Vercel (CI/CD)
+
+---
+
+## 🏗 Project Structure
+
+```text
+src/
+├── assets/         # Optimized images, icons, and fonts
+├── components/     # Reusable UI components (Buttons, Modals, Layouts)
+├── context/        # Scroll management and global logic
+├── pages/          # Page-level components (Home, About, Goals, etc.)
+└── styles/         # Global CSS and Tailwind configurations
+```
+---
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/Kholod13/cv_web.git
+npm install
+npm run dev
+```
+---
+
+## 👨‍💻 Contact Me
+**Vladyslav Kholod — Frontend Developer**
+
+- **LinkedIn:** https://www.linkedin.com/in/vladyslav-kholod-86647120a/
+- **Email:** vlad13holod@gmail.com
