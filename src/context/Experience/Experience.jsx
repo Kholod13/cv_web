@@ -21,9 +21,8 @@ const TECH_ICONS = [
 
 export default function Experience() {
     return (
-        <div className="wrapper">
             <div className="container">
-                <p className="pageTitle">Experience</p>
+                {/*<p className="pageTitle">Experience</p>*/}
 
                 <div className="experience_container">
                     <MacBlock />
@@ -36,16 +35,8 @@ export default function Experience() {
                                 <img src={icon} alt="tech" />
                             </div>
                         ))}
-                        {TECH_ICONS.map((icon, index) => (
-                            <div className="marquee_item" key={`icon-2-${index}`}>
-                                <img src={icon} alt="tech" />
-                            </div>
-                        ))}
                     </div>
                 </div>
-
-                <Creators />
             </div>
-        </div>
     );
 }

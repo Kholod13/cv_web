@@ -38,13 +38,27 @@ const PROJECTS_LIST = [
         tech: ["JS", "CSS" ],
         link: "https://github.com/Kholod13/vanillaJavascript_ToDoList"
     },
+    {
+        id: 6,
+        title: "News list",
+        description: "News list with CRUD and more funcs on typescript and framer-motion (PET).",
+        tech: ['React', "Tailwind", "Vite", "TypeScript", 'Redux', 'framer-motion', 'lucide-react' ],
+        link: "https://github.com/Kholod13/newsRedux"
+    },
+    {
+        id: 7,
+        title: "Crypto Wallet",
+        description: "Crypto portfolio tracker for consolidating all your wallets and market insights on a single platform. (PET).",
+        tech: ['React', 'TypeScript', 'Redux', "Vite", "REST API", 'Tailwind', 'framer-motion', 'lucide-react' ],
+        link: "https://github.com/Kholod13/cryptoWallet"
+    },
 ];
 
 export default function Projects() {
     return (
         <div className="wrapper min-h-screen">
             <div className="container project-page-container">
-                <p className="pageTitle">Projects</p>
+                {/*<p className="pageTitle">Projects</p>*/}
 
                 <div className="projects_grid">
                     {PROJECTS_LIST.map((project) => (
@@ -63,7 +77,6 @@ export default function Projects() {
                     ))}
                 </div>
 
-                <Creators />
             </div>
         </div>
     );

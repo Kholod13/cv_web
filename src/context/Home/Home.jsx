@@ -7,18 +7,18 @@ import upload from "../../assets/icons/upload.svg"
 import { useNavigate } from 'react-router-dom';
 import Creators from '../Creators';
 
-import AboutMe from '../../assets/tabs/about_me.png';
-import Contacts from '../../assets/tabs/contacts.png';
-import Experience from '../../assets/tabs/experience.png';
-import Goals from '../../assets/tabs/goals.png';
-import Projects from '../../assets/tabs/projects.png';
+import AboutMe from '../AboutMe/AboutMe.jsx';
+import Contacts from '../Contacts/Contacts.jsx';
+import Experience from '../Experience/Experience.jsx';
+import Goals from '../Goals/Goals.jsx';
+import Projects from '../Projects/Projects.jsx';
 
 const TABS_DATA = [
-  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", image: AboutMe },
-  { id: 'Goals', title: "Goals", content: "Click here to see my professional goals and aspirations.", image: Goals },
-  { id: 'Projects', title: "Projects", content: "Check out a detailed showcase of my works and the technologies I used to build them.", image: Projects },
-  { id: 'Experience', title: "Experience", content: "Discover my career journey and the skills I've gained along the way.", image: Experience },
-  { id: 'Contacts', title: "Contacts", content: "Let’s get in touch! You can find all my social links and contact info here.", image: Contacts },
+  { id: 'AboutMe', title: "About Me", content: "Feel free to read more about me if you'd like to learn more.", context: <AboutMe/> },
+  //{ id: 'Goals', title: "Goals", content: "Click here to see my professional goals and aspirations.", context: <Goals/> },
+  { id: 'Projects', title: "Projects", content: "Check out a detailed showcase of my works and the technologies I used to build them.", context: <Projects/> },
+  { id: 'Experience', title: "Experience", content: "Discover my career journey and the skills I've gained along the way.", context: <Experience/> },
+  { id: 'Contacts', title: "Contacts", content: "Let’s get in touch! You can find all my social links and contact info here.", context: <Contacts/> },
 ]
 
 export default function Home() {
@@ -91,10 +91,10 @@ export default function Home() {
                 ))}
               </ul>
             </nav>
-            <div className="tabs_content">
-              {/* Здесь отображается контент активного таба */}
-              <div onClick={() => navigate(`/${TABS_DATA[activeTab].id}`)} className='tab_image'>
-                <img src={TABS_DATA[activeTab].image} alt="tab image" className="activeTab_image"/>
+            <div className="tabs_content" key={activeTab}>
+              {/* active tab context */}
+              <div className='tab_image'>
+                {TABS_DATA[activeTab].context}
               </div>
               <p style={{width: '70%', textAlign: 'right'}} className="description">{TABS_DATA[activeTab].content}</p>
             </div>

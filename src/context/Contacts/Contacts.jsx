@@ -20,9 +20,8 @@ const CONTACTS_DATA = [
 
 export default function Contacts() {
     return (
-        <div className="wrapper min-h-screen">
             <div className="container contacts_page">
-                <p className="pageTitle">Contacts</p>
+                <p className="pageTitle" style={{paddingTop: '40px'}}>Contacts</p>
                 
                 <div className="contacts_intro">
                     <p className="description">
@@ -50,9 +49,6 @@ export default function Contacts() {
                         </a>
                     ))}
                 </div>
-
-                <Creators />
             </div>
-        </div>
     );
 }
