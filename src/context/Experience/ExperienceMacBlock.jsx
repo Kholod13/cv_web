@@ -18,7 +18,7 @@ const EXPERIENCE_DATA = [
         variableName: "currentJob",
         title: "Frontend Developer / React Developer",
         company: "QRI Tech",
-        from: "14/01/25",
+        from: "14/01/24",
         to: "Present",
         location: "Remote"
     },

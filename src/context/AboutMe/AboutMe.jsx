@@ -31,11 +31,10 @@ export default function AboutMe() {
                             <img src={palm} alt="palm icon" className="palm_icon"/>
                         </div>*/}
                         <p className="description aboutme_description">
-                            Junior Frontend Developer based in Prague, originally from Rivne, Ukraine. I’m passionate
-                            about building simple, intuitive, and user-friendly interfaces using React and React Native
-                            <br/><br/>Currently, I work remotely at QRI Tech, contributing to both mobile applications
-                            and web services. I enjoy improving app performance, ensuring design consistency, and
-                            collaborating with my team through code reviews and technical discussions.
+                            Result-oriented Frontend Developer with 2+ years of commercial experience in building high-performance web (React) and mobile (React Native) applications. Specialized in crafting premium UI/UX with complex animations (Framer Motion) and integrating AI-driven features into corporate tools.
+                            <br/>
+                            <br/>
+                            Proficient in managing complex global states (Redux Toolkit) and implementing multi-language support (i18n). Possesses a strong technical background in Backend technologies, enabling effective cross-team collaboration and the ability to build end-to-end MVPs. Fluent in Czech (B2).
                         </p>
                     </div>
                     <div className="aboutme_image">
