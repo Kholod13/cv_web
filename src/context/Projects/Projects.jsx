@@ -47,9 +47,9 @@ const PROJECTS_LIST = [
     },
     {
         id: 7,
-        title: "Crypto Wallet",
-        description: "Crypto portfolio tracker for consolidating all your wallets and market insights on a single platform. (PET).",
-        tech: ['React', 'TypeScript', 'Redux', "Vite", "REST API", 'Tailwind', 'framer-motion', 'lucide-react' ],
+        title: "SyncSpace",
+        description: "Full stack capability to support the complex frontend, independently implemented a lightweight backend using Node.js/Express and Prisma (PostgreSQL), and containerized the setup via Docker.",
+        tech: ['React', 'TypeScript', 'Redux', "Vite", "REST API", 'Tailwind', 'framer-motion', 'Node Express', "PostgreSQL", 'Prisma ORM' ],
         link: "https://github.com/Kholod13/cryptoWallet"
     },
 ];
